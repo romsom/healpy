@@ -1,0 +1,103 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+}
+
+/*Colors*/
+
+.header-background {
+  background-image: url(../img/healpy_background-image.png);
+}
+
+.maincolor-background {
+  background-color: #00a99d;
+  color: white;
+}
+
+.accent-background {
+  background-color: #8eb6b1;
+  color: white;
+}
+
+.dark-background {
+  background-color: #374a47;
+  color: white;
+}
+/*END: Colors*/
+
+
+/*Header*/
+.header-section {
+  padding: 50px 0 50px 0;
+}
+
+.header-image {
+  max-width: 350px;
+}
+/*END:Header*/
+
+/*Sections*/
+.section-space {
+  padding: 50px 0 50px 0;
+}
+
+.section-space-double {
+  padding: 100px 0 100px 0;
+}
+/*END:Sections*/
+
+
+
+
+/*Typography*/
+
+h1, h2, h3, h4, h5, h6, p, a, ul > li {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+}
+
+p, a, ul > li {
+  font-size: 120%;
+}
+
+p.lead {
+  font-size: 180%;
+  color: #374a47;
+  line-height: 120%;
+}
+
+li {
+  padding-top: 20px;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul.footer li, ul.appstore li  {
+  display: inline;
+  padding-right: 20px;
+}
+
+ul.footer, li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+a {
+  color: #8eb6b1;
+  text-decoration: none
+}
+
+.app-image {
+  border-radius: 5px;
+}
+/*END:Typography*/
+
+/*MDL*/
+
+
+.mdl-grid.section {
+  width: 80vw;
+}
+/*END:MDL*/
