@@ -7,7 +7,7 @@ var challengeDefs = [
 	'dataElements': [],
 	'finished': false,
 	'check': function(dataElement, challenge) {
-	    if(dataElement.type === 'steps') {
+	    if(dataElement.type == 'steps') {
 		challenge.requirements.steps -= dataElement.data;
 		challenge.dataElements.push(dataElement);
 	    }
@@ -42,7 +42,7 @@ Meteor.publish('challenges',function() {
 
 Meteor.methods({
     'newChallenge': function() {
-	var chNum = challengeDefs[Math.random() * challenges.length];
+	var chNum = Math.floor(Math.random() * challengeDefs.length);
 	return challenges.insert({
 	    'id': chNum,
 	    'requirements': challengeDefs[chNum].requirements,
@@ -55,6 +55,7 @@ Meteor.methods({
 	var data = dataElements.findOne(dataID);
 	var finished_challenges = [];
 	for (var ch in activeChs) {
+	    ch = activeChs[ch];
 	    challengeDefs[ch.id].check(data, ch);
 	    challenges.update(ch._id, ch);
 	    if (ch.finished) {
