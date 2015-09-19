@@ -1,7 +1,3 @@
-// Collections
-var dataElements = new Mongo.Collection('dataElements');
-var challenges = new Mongo.Collection('challenges');
-var memos = new Mongo.Collection('memos');
 // neccessary properties
 var dataElementProperties = ['type', 'data'];
 var challengeProperties = ['type', 'dataElements', 'finished'];
@@ -9,19 +5,21 @@ var memoProperties = ['dataElements'];
 
 var insertElement = function(elem, props, coll) {
     // verification
-    for (var prop in props) {
-	if (!elem.hasProperty(prop))
-	    return [false, null];
-    }
+  //   for (var prop in props) {
+	// if (!elem.hasOwnProperty(prop))
+	//     return [false, null];
+  //   }
     // insertion
     elem.timestamp = new Date();
-    return [true, coll.insert(elem)];
+
+    var id = coll.insert(elem);
+    return {'id': id};
 }
 
 var updateElement = function(id, coll, props, elem) {
     // verification
      for (var prop in props) {
-	if (!elem.hasProperty(prop))
+	if (!elem.hasOwnProperty(prop))
 	    return [false, null];
     }
     // update with new timestamp
@@ -31,19 +29,19 @@ var updateElement = function(id, coll, props, elem) {
 
 Meteor.methods({
   'insertDataElement' : function(dataElement) {
-    insertElement(dataElement, dataElementProperties, dataElements);
+    return insertElement(dataElement, dataElementProperties, dataElements);
   },
   'insertChallenge' : function(challenge) {
-    insertElement(challenge, challengeProperties, challenges);
+    return insertElement(challenge, challengeProperties, challenges);
   },
   'updateChallenge' : function(id, challenge) {
-    updateElement(id, challenges, challengeProperties, challenge);
+    return updateElement(id, challenges, challengeProperties, challenge);
   },
   'insertMemo' : function(memo) {
-    insertElement(memo, memoProperties, memos);
+    return insertElement(memo, memoProperties, memos);
   },
   'updateMemo' : function(id, memo) {
-    updateElement(id, memos, memoProperties, memo);
+    return updateElement(id, memos, memoProperties, memo);
   },
   'clear' : function() {
     challenges.remove({});
