@@ -1,0 +1,11 @@
+<template name="entriesOverview">
+  <h2>Entries Overview</h2>
+  <ul>
+    {{#each entries}}
+      <li>
+        <h3>{{ title }}</h3>
+        <p>{{data.text}}</p>
+      </li>
+    {{/each}}
+  </ul>
+</template>
