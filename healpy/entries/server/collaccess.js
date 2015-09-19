@@ -11,22 +11,22 @@ var insertElement = function(elem, props, coll) {
     // verification
     for (var prop in props) {
 	if (!elem.hasProperty(prop))
-	    return {false, null};
+	    return [false, null];
     }
     // insertion
     elem.timestamp = new Date();
-    return {true, coll.insert(elem)};
+    return [true, coll.insert(elem)];
 }
 
 var updateElement = function(id, coll, props, elem) {
     // verification
      for (var prop in props) {
 	if (!elem.hasProperty(prop))
-	    return {false, null};
+	    return [false, null];
     }
     // update with new timestamp
     elem.timestamp = new Date();
-    return {true, coll.update(id, elem)};
+    return [true, coll.update(id, elem)];
 }
 
 Meteor.methods({
