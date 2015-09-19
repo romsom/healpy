@@ -30,24 +30,24 @@ var updateElement = function(id, coll, props, elem) {
 }
 
 Meteor.methods({
-    'insertDataElement' : function(dataElement) {
-	insertElement(dataElement, dataElementProperties, dataElements);
-    },
-    'insertChallenge' : function(challenge) {
-	insertElement(challenge, challengeProperties, challenges);
-    },
-    'updateChallenge' : function(id, challenge) {
-	updateElement(id, challenges, challengeProperties, challenge);
-    },
-    'insertMemo' : function(memo) {
-	insertElement(memo, memoProperties, memos);
-    },
-    'updateMemo' : function(id, memo) {
-	updateElement(id, memos, memoProperties, memo);
-    },
-    'clear' : function() {
-	challenges.remove({});
-	memos.remove({});
-	dataElements.remove({});
-    }
+  'insertDataElement' : function(dataElement) {
+    insertElement(dataElement, dataElementProperties, dataElements);
+  },
+  'insertChallenge' : function(challenge) {
+    insertElement(challenge, challengeProperties, challenges);
+  },
+  'updateChallenge' : function(id, challenge) {
+    updateElement(id, challenges, challengeProperties, challenge);
+  },
+  'insertMemo' : function(memo) {
+    insertElement(memo, memoProperties, memos);
+  },
+  'updateMemo' : function(id, memo) {
+    updateElement(id, memos, memoProperties, memo);
+  },
+  'clear' : function() {
+    challenges.remove({});
+    memos.remove({});
+    dataElements.remove({});
+  }
 });
