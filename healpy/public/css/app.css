@@ -22,12 +22,31 @@
   margin-bottom: 30px;
 }
 
+.challenge-card.mdl-card {
+  width: auto;
+  height: auto;
+  margin-bottom: 30px;
+}
+
 .mdl-card__supporting-text {
   color: #374a47;
 }
 .demo-card-square > .mdl-card__title {
   color: #fff;
   background-color: #00a99d;
+  min-height: 300px;
+}
+
+.challenge-card > .mdl-card__title {
+  color: #fff;
+  background-color: #00a99d;
+  text-align: center;
+}
+
+.challenge-card > .mdl-card__supporting-text {
+  color: #fff;
+  background-color: #8eb6b1;
+  width: auto;
 }
 
 li:nth-child(even) > .demo-card-square > .mdl-card__title {
@@ -46,6 +65,10 @@ li:nth-child(odd) > .demo-card-square > .mdl-card__title {
 .mdl-layout__drawer-button {
   background-color: #00a99d;
   color: white;
+}
+
+.space {
+  padding: 20px 0 20px 0;
 }
 /*END:MDL Hacks*/
 
@@ -78,6 +101,8 @@ h1, h2, h3, h4, h5, h6, p, a, li {
 /*Entries Overview*/
 ul.entries {
   list-style-type: none;
+  padding: 0;
+  margin: 0;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
   -webkit-margin-start: 0;

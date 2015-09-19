@@ -1,56 +1,50 @@
 <template name="newEntry">
-  <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-    <div class="mdl-tabs__tab-bar">
-        <a href="#text-panel" class="mdl-tabs__tab is-active">Text</a>
-        <a href="#image-panel" class="mdl-tabs__tab">Image</a>
-        <a href="#video-panel" class="mdl-tabs__tab">Video</a>
-        <a href="#voice-panel" class="mdl-tabs__tab">Voice</a>
-    </div>
-
-    <div class="mdl-tabs__panel is-active" id="text-panel">
-      <form id="newEntry">
-        <div class="mdl-textfield mdl-js-textfield">
-          <input class="mdl-textfield__input" type="text" id="title" name="title"/>
-          <label class="mdl-textfield__label" for="title">Title</label>
-        </div>
-        <br/>
-        <div class="mdl-textfield mdl-js-textfield">
-          <textarea class="mdl-textfield__input" name="text" rows= "3" id="text" ></textarea>
-          <label for="text">What happened today?</label>
-        </div>
-        <br/>
-        <button class="mdl-button mdl-js-button mdl-button--raised" type="submit">Submit</button>
-      </form>
-    </div>
-    <div class="mdl-tabs__panel" id="image-panel">
-      <div align="center">
-        <button class="mdl-button mdl-js-button mdl-button--fab">
-          <i class="material-icons">add</i>
-        </button>
-      </div>
-    </div>
-    <div class="mdl-tabs__panel" id="video-panel">
-      <div align="center">
-        <button class="mdl-button mdl-js-button mdl-button--fab">
-          <i class="material-icons">add</i>
-        </button>
-      </div>
-    </div>
-    <div class="mdl-tabs__panel" id="voice-panel">
-      <div align="center">
-        <button class="mdl-button mdl-js-button mdl-button--fab">
-          <i class="material-icons">add</i>
-        </button>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
   
+  <div>
+    <ul class="nav nav-tabs" role="tablist" align="center">
+      <li role="presentation"><a href="#note" aria-controls="note" role="tab" data-toggle="tab">Note</a></li>
+      <li role="presentation"><a href="#image" aria-controls="image" role="tab" data-toggle="tab">Image</a></li>
+      <li role="presentation"><a href="#video" aria-controls="video" role="tab" data-toggle="tab">Video</a></li>
+      <li role="presentation"><a href="#voice" aria-controls="voice" role="tab" data-toggle="tab">Voice</a></li>
+    </ul>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane fade" id="note">
+        <form>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input class="form-control" type="text" id="title" name="title" placeholder="Title"/>
+          </div>
+
+          <div class="form-group">
+            <label for="text">What happened today?</label>
+            <textarea name="text" id="text" class="form-control" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="image">
+        <div class="form-group">
+          <label for="title">Upload your personal impressions: </label>
+          <button type="button" class="btn btn-default">Image Upload</button>
+        </div>
+        
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="video">
+        <div class="form-group">
+          <label for="title">Upload your personal impressions: </label>
+          <button type="button" class="btn btn-default">Video Upload</button>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="voice">
+        <div class="form-group">
+          <label for="title">Upload your personal impressions: </label>
+          <button type="button" class="btn btn-default">Voice Upload</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </template>
 
 
