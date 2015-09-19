@@ -10,8 +10,8 @@ var memoProperties = ['dataElements'];
 var insertElement = function(elem, props, coll) {
     // verification
     for (var prop in props) {
-	if (!elem.hasProperty(prop))
-	    return {false, null};
+      if (!elem.hasProperty(prop))
+	      return {false, null};
     }
     // insertion
     elem.timestamp = new Date();
@@ -20,9 +20,9 @@ var insertElement = function(elem, props, coll) {
 
 var updateElement = function(id, coll, props, elem) {
     // verification
-     for (var prop in props) {
-	if (!elem.hasProperty(prop))
-	    return {false, null};
+    for (var prop in props) {
+    	if (!elem.hasProperty(prop))
+        return {false, null};
     }
     // update with new timestamp
     elem.timestamp = new Date();
@@ -30,24 +30,24 @@ var updateElement = function(id, coll, props, elem) {
 }
 
 Meteor.methods({
-    'insertDataElement' : function(dataElement) {
-	insertElement(dataElement, dataElementProperties, dataElements);
-    },
-    'insertChallenge' : function(challenge) {
-	insertElement(challenge, challengeProperties, challenges);
-    },
-    'updateChallenge' : function(id, challenge) {
-	updateElement(id, challenges, challengeProperties, challenge);
-    },
-    'insertMemo' : function(memo) {
-	insertElement(memo, memoProperties, memos);
-    },
-    'updateMemo' : function(id, memo) {
-	updateElement(id, memos, memoProperties, memo);
-    },
-    'clear' : function() {
-	challenges.remove({});
-	memos.remove({});
-	dataElements.remove({});
-    }
+  'insertDataElement' : function(dataElement) {
+    insertElement(dataElement, dataElementProperties, dataElements);
+  },
+  'insertChallenge' : function(challenge) {
+    insertElement(challenge, challengeProperties, challenges);
+  },
+  'updateChallenge' : function(id, challenge) {
+    updateElement(id, challenges, challengeProperties, challenge);
+  },
+  'insertMemo' : function(memo) {
+    insertElement(memo, memoProperties, memos);
+  },
+  'updateMemo' : function(id, memo) {
+    updateElement(id, memos, memoProperties, memo);
+  },
+  'clear' : function() {
+    challenges.remove({});
+    memos.remove({});
+    dataElements.remove({});
+  }
 });
