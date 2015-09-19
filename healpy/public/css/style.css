@@ -81,7 +81,6 @@ a.navbar-brand > img {
 }
 
 .panel-default > .panel-heading {
-  min-height: 300px;
   background-color: transparent;
 }
 
@@ -89,6 +88,11 @@ h2.panel-title {
   padding: 10px 0 10px 0;
   font-size: 180%;
   text-transform: uppercase;
+}
+
+.panel-media {
+  min-height: auto;
+  width: 100%;
 }
 
 .panel-footer {
