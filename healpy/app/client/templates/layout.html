@@ -6,7 +6,9 @@
   <title>Healpy – Feelin' healpy today?</title>
   <meta name="description" content="With healpy you can capture memories, master new challenges and start a life with more activity and happiness.">
 
+
   <link rel="stylesheet" href="css/material.min.css">
+  <link rel="stylesheet" href="css/app.css">
   <script src="js/material.min.js"></script>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -15,30 +17,25 @@
 
 
 <template name="layout">
-  <h1>Healpy</h1>
-  <hr />
-  <div>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
     {{> menu }}
-  </div>
-  <div>
-    {{> yield }}
+    <main class="mdl-layout__content">
+      <div class="page-content">{{> yield }}</div>
+    </main>
   </div>
 </template>
 
-<template name="menu">
-  <h2>Menu</h2>
-  <ul>
-    <li>
-      <a href="">Testlink</a>
-    </li>
-    <li>
-      <a href="">Testlink</a>
-    </li>
-    <li>
-      <a href="">Testlink</a>
-    </li>
-    <li>
-      <a href="">Testlink</a>
-    </li>
-  </ul>
+<template name="menu">  
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title"><img src="img/healpy_logo.png"/></span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="#">Dashboard</a>
+      <a class="mdl-navigation__link" href="#">Challenges</a>
+      <a class="mdl-navigation__link" href="#">Notebook</a>
+      <a class="mdl-navigation__link" href="#">Analytics</a>
+      <a class="mdl-navigation__link" href="#">Settings</a>
+      <a class="mdl-navigation__link" href="#">Logout</a>
+    </nav>
+  </div>
+
 </template>
