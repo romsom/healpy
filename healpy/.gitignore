@@ -1,0 +1,7 @@
+# backup files
+\#*#
+\#
+*~
+
+# there seems to be a bug of some kind, this should be included in the future:
+.meteor/versions
