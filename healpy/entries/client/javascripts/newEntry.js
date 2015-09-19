@@ -2,16 +2,25 @@ Template.newEntry.events({
   'submit form': function(event) {
     event.preventDefault();
 
-    var dataElement = {};
+    var dataElementId;
+    var dataElement = {
+      type:"",
+      data: {}
+    };
     var memo = {};
-    
-    dataElement.text = event.target.text.value;
-    memo.title = event.target.title.value;
 
-    console.log(Meteor.call('insertDataElement', dataElement));
-    memo.dataElements = [];
 
-    console.log(dataElement);
+    dataElement.type = 'text';
+    dataElement.data.text = event.target.text.value;
+    Meteor.call('insertDataElement', dataElement, function (error, response) {
+      if(error) console.log('error', error);
 
+      dataElementId = response.id;
+
+      memo.title = event.target.title.value;
+      memo.data = [];
+      memo.data[0] = dataElementId;
+      Meteor.call('insertMemo', memo);
+    });
   }
 })
