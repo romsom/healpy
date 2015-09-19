@@ -1,6 +1,6 @@
 // neccessary properties
 var dataElementProperties = ['type', 'data'];
-var challengeProperties = ['type', 'dataElements', 'finished'];
+var challengeProperties = ['id', 'requirements', 'dataElements', 'finished'];
 var memoProperties = ['dataElements'];
 
 var insertElement = function(elem, props, coll) {
