@@ -1,15 +1,23 @@
 <template name="entriesOverview">
+  <div class="header-section"><h2>Notebook</h2></div>
   {{> newEntry }}
-
-  <h2>Entries Overview</h2>
-  <ul>
+  <ul class="entries">
     {{#each entries}}
       <li>
-        <h3>{{ title }}</h3>
-        <p>{{ text }}</p>
-        <!-- {{#each data}}
-          <p>{{ data }}</p>
-        {{/each}} -->
+        <div class="demo-card-square mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <h2 class="mdl-card__title-text">{{ title }}</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            {{ text }}
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+              Read more
+            </a>
+          </div>
+        </div>
+      
       </li>
     {{/each}}
   </ul>

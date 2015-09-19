@@ -1,10 +1,58 @@
 <template name="newEntry">
-  <form>
-    <label for="title">Title</label>
-    <input type="text" name="title"/>
-    <br />
-    <textarea name="text" rows="8" cols="30"></textarea>
-    <br />
-    <button type="submit">Submit</button>
-  </form>
+  <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+    <div class="mdl-tabs__tab-bar">
+        <a href="#text-panel" class="mdl-tabs__tab is-active">Text</a>
+        <a href="#image-panel" class="mdl-tabs__tab">Image</a>
+        <a href="#video-panel" class="mdl-tabs__tab">Video</a>
+        <a href="#voice-panel" class="mdl-tabs__tab">Voice</a>
+    </div>
+
+    <div class="mdl-tabs__panel is-active" id="text-panel">
+      <form id="newEntry">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="title" name="title"/>
+          <label class="mdl-textfield__label" for="title">Title</label>
+        </div>
+        <br/>
+        <div class="mdl-textfield mdl-js-textfield">
+          <textarea class="mdl-textfield__input" name="text" rows= "3" id="text" ></textarea>
+          <label for="text">What happened today?</label>
+        </div>
+        <br/>
+        <button class="mdl-button mdl-js-button mdl-button--raised" type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="mdl-tabs__panel" id="image-panel">
+      <div align="center">
+        <button class="mdl-button mdl-js-button mdl-button--fab">
+          <i class="material-icons">add</i>
+        </button>
+      </div>
+    </div>
+    <div class="mdl-tabs__panel" id="video-panel">
+      <div align="center">
+        <button class="mdl-button mdl-js-button mdl-button--fab">
+          <i class="material-icons">add</i>
+        </button>
+      </div>
+    </div>
+    <div class="mdl-tabs__panel" id="voice-panel">
+      <div align="center">
+        <button class="mdl-button mdl-js-button mdl-button--fab">
+          <i class="material-icons">add</i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  
 </template>
+
+
+
+  
