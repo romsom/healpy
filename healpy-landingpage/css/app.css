@@ -7,6 +7,7 @@ body {
 
 .header-background {
   background-image: url(../img/healpy_background-image.png);
+  color: white;
 }
 
 .maincolor-background {
@@ -15,7 +16,7 @@ body {
 }
 
 .accent-background {
-  background-color: #8eb6b1;
+  background-color: #22b573;
   color: white;
 }
 
@@ -62,7 +63,7 @@ p, a, ul > li {
 
 p.lead {
   font-size: 180%;
-  color: #374a47;
+  color: #00a99d;
   line-height: 120%;
 }
 
