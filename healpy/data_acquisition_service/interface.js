@@ -9,6 +9,9 @@ Meteor.methods({
     },
     'getFullCV': function(file) {
 	return getOxfordCV(file, 'All');
+    },
+    'getFullCVFromURL': function(url) {
+	return getOxfordCVFromURL(url, 'All');
     }
 });
     

@@ -4,8 +4,6 @@ var challengeDefs = [
 	'requirements': {
 	    'steps': 1000,
 	},
-	'dataElements': [],
-	'finished': false,
 	'check': function(dataElement, challenge) {
 	    if(dataElement.type === 'steps') {
 		challenge.requirements.steps -= dataElement.data;
@@ -20,10 +18,23 @@ var challengeDefs = [
 	'requirements': {
 	    'pictures': 1
 	},
-	'dataElements': [],
-	'finished': false,
 	'check': function (dataElement, challenge) {
 	    if (dataElement.type === 'picture') {
+		challenge.requirements.pictures--;
+		challenge.dataElements.push(dataElement);
+	    }
+	    if (challenge.requirements.pictures <= 0) {
+		challenge.finished = true;
+	    }
+	}
+    }, {
+	'name': "TakeAPicture",
+	'requirements': {
+	    'pictures': 1
+	},
+	'check': function (dataElement, challenge) {
+	    if (dataElement.type === 'picture') {
+		var image = Images.findOne(dataElement.data);
 		challenge.requirements.pictures--;
 		challenge.dataElements.push(dataElement);
 	    }
@@ -58,8 +69,9 @@ Meteor.methods({
     	    challengeDefs[ch.id].check(data, ch);
     	    challenges.update(ch._id, ch);
     	    if (ch.finished) {
-    		      finished_challenges.push(ch._id);
-	       }
+		ch.finishedAt = new Date();
+    		finished_challenges.push(ch._id);
+	    }
     	}
     	return finished_challenges;
     }

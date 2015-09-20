@@ -41,6 +41,37 @@ getOxfordCV = function(file, features) {
     });
 	      */
 }
+
+getOxfordCVFromURL = function(url,features) {
+    var params = {
+	'visualFeatures': features
+    };
+    var res = HTTP.call('POST', oxfordURL, {
+	'content': "{'Url': '" + url + "' }",
+	'params': params,
+	'headers': {
+	    'Content-Type': "application/json",
+	    'Access-Control-Allow-Origin': "*",
+	    'Ocp-Apim-Subscription-Key': subscriptionKey
+	}
+    }, function(error, result) {
+	if(error)
+	    console.log(error);
+	else {
+	    console.log(result);
+	    // create new dataElement
+	    var id dataElements.insert({
+		'type': 'imageAnalysis',
+		'data': result.content
+	    });
+	    // check challenges
+	    Meteor.call('checkData', id, function(e) {console.log(e)});
+	}
+    });
+    return res;
+}
+
+
 /*
 var openFile = function(events) {
     var input = event.target;
