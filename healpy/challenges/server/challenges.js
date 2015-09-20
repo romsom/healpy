@@ -33,7 +33,7 @@ var challengeDefs = [
 	}
     }
 ];
-	
+
 
 Meteor.publish('challenges',function() {
     return challenges.find();
@@ -41,26 +41,26 @@ Meteor.publish('challenges',function() {
 
 Meteor.methods({
     'newChallenge': function() {
-	var chNum = Math.floor(Math.random() * challengeDefs.length);
-	return challenges.insert({
-	    'id': chNum,
-	    'requirements': challengeDefs[chNum].requirements,
-	    'dataElements': [],
-	    'finished': false
-	});
+    	var chNum = Math.floor(Math.random() * challengeDefs.length);
+    	return challenges.insert({
+    	    'id': chNum,
+    	    'requirements': challengeDefs[chNum].requirements,
+    	    'dataElements': [],
+    	    'finished': false
+    	});
     },
     'checkData': function(dataID) {
-	var activeChs = challenges.find({'finished': false}).fetch();
-	var data = dataElements.findOne(dataID);
-	var finished_challenges = [];
-	for (var ch in activeChs) {
-	    ch = activeChs[ch];
-	    challengeDefs[ch.id].check(data, ch);
-	    challenges.update(ch._id, ch);
-	    if (ch.finished) {
-		finished_challenges.push(ch._id);
-	    }
-	}
-	return finished_challenges;
+    	var activeChs = challenges.find({'finished': false}).fetch();
+    	var data = dataElements.findOne(dataID);
+    	var finished_challenges = [];
+    	for (var ch in activeChs) {
+    	    ch = activeChs[ch];
+    	    challengeDefs[ch.id].check(data, ch);
+    	    challenges.update(ch._id, ch);
+    	    if (ch.finished) {
+    		      finished_challenges.push(ch._id);
+	       }
+    	}
+    	return finished_challenges;
     }
 });

@@ -12,16 +12,17 @@ var insertElement = function(elem, props, coll) {
     // insertion
     elem.timestamp = new Date();
 
+    console.log(elem);
     var id = coll.insert(elem);
     return {'id': id};
 }
 
 var updateElement = function(id, coll, props, elem) {
     // verification
-    for (var prop in props) {
-	if (!elem.hasOwnProperty(prop))
-	    return [false, null];
-    }
+  //   for (var prop in props) {
+	// if (!elem.hasOwnProperty(prop))
+	//     return [false, null];
+  //   }
     // update with new timestamp
     elem.timestamp = new Date();
     return [true, coll.update(id, elem)];

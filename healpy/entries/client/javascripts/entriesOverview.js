@@ -2,7 +2,27 @@ Template.entriesOverview.helpers({
   entries: function () {
     return memos.find();
   },
-  text: function() {
-    return dataElements.findOne(this.data[0]).data.text;
+  renderText: function() {
+    var dataElement = dataElements.findOne(this.toString());
+    // console.log(dataElement);
+    if(dataElement.type === "text" && dataElement) return dataElement.data.text;
+  },
+  getImageUrl: function(){
+    console.log('this', this);
+    for (var index in this.data) {
+      console.log(this.data[index]);
+      var dataElement = dataElements.findOne(this.data[index]);
+      if(dataElement.type === "image") {
+        return Images.findOne(dataElement.data.id).url();
+      } else {
+        return false;
+      }
+    }
   }
 });
+
+Template.mediaContainer.helpers({
+  getImgUrl: function(dataElement) {
+    console.log(this);
+  }
+})

@@ -8,12 +8,9 @@
         <img class="img-responsive" src="img/healpy_yeah.png"/>
       </div>
       <h2>Love your smile!</h2>
-      <p>Save your brightest smile, like a treasure. Just take a quick photo. Healpy will recognize automatically when you show us all of your teeth. Only then will this mission be accomplished.</p> 
+      <p>Save your brightest smile, like a treasure. Just take a quick photo. Healpy will recognize automatically when you show us all of your teeth. Only then will this mission be accomplished.</p>
     </div>
   </div>
-
-
-
 
   <br/>
   <br/>
@@ -28,15 +25,21 @@
 
         <div class="panel panel-default">
           <div class="panel-heading">
-            <img class="img-responsive img-rounded panel-media" src="img/mittagessen.jpg"/>
+            <img class="img-responsive img-rounded panel-media" src="{{ getImageUrl }}" />
             <h2 class="panel-title">{{ title }}</h2>
           </div>
           <div class="panel-body">
-            {{ text }}
+            {{#each data}}
+              {{ renderText }}
+            {{/each}}
           </div>
           <div class="panel-footer"># Challenge</div>
         </div>
       </li>
     {{/each}}
   </ul>
+</template>
+
+<template name="mediaContainer">
+  <img class="img-responsive img-rounded panel-media" src="{{ getImageUrl }}"/>
 </template>
