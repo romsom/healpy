@@ -72,7 +72,7 @@ a.navbar-brand > img {
   color: white;
 }
 
-.panel-body > p {
+.panel-accent .panel-body > p {
   color: white;
 }
 
@@ -88,6 +88,10 @@ h2.panel-title {
   padding: 10px 0 10px 0;
   font-size: 180%;
   text-transform: uppercase;
+}
+
+.panel-body > h4 {
+  color: white;
 }
 
 .panel-media {

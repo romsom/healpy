@@ -1,12 +1,14 @@
 <template name="entriesOverview">
   <!-- <div class="header-section"><h1>Feelin' healpy today?</h1></div> -->
-  <h3>Your challenge for today:</h3>
+  
 
-  <div class="panel panel-accent">
+  <div class="panel panel-accent alert-dismissible" rolw="alert">
     <div class="panel-body">
-      <div align="center">
+      <!-- <div align="center">
         <img class="img-responsive" src="img/healpy_yeah.png"/>
-      </div>
+      </div> -->
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4>Your challenge for today:</h4>
       <h2>Love your smile!</h2>
       <p>Save your brightest smile, like a treasure. Just take a quick photo. Healpy will recognize automatically when you show us all of your teeth. Only then will this mission be accomplished.</p>
     </div>
@@ -30,7 +32,7 @@
           </div>
           <div class="panel-body">
             {{#each data}}
-              {{ renderText }}
+              <p>{{ renderText }}</p>
             {{/each}}
           </div>
           <div class="panel-footer"># Challenge</div>
