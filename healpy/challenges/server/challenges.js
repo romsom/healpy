@@ -7,14 +7,13 @@ var challengeDefs = [
 	'dataElements': [],
 	'finished': false,
 	'check': function(dataElement, challenge) {
-	    if(dataElement.type == 'steps') {
+	    if(dataElement.type === 'steps') {
 		challenge.requirements.steps -= dataElement.data;
 		challenge.dataElements.push(dataElement);
 	    }
 	    if (challenge.requirements.steps <= 0) {
 		challenge.finished = true;
 	    }
-	    // TODO event?
 	}
     }, {
 	'name': "TakeAPicture",
