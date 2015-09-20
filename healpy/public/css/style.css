@@ -1,0 +1,117 @@
+body {
+  padding-top: 72px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  color: #374a47;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, li {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  color: #374a47;
+}
+
+/*Navbar*/
+
+ul.nav.navbar-nav {
+  text-transform: uppercase;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: white;
+}
+
+.navbar-default {
+  border: none;
+  background-color: #00a99d;
+  color: white;
+}
+
+.navbar-default .navbar-toggle {
+  border: none;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #01C5B7;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: #01C5B7;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+a.navbar-brand > img {
+  max-height: 50px;
+  width: auto;
+}
+
+/*END: Navbar*/
+
+/*Header Section*/
+
+.header-section > h1{
+  color: #00a99d;
+  text-transform: uppercase;
+}
+
+/*Panel*/
+
+.panel-accent {
+  border-color: #00a99d;
+  background-color: #00a99d;
+  color: white;
+}
+
+.panel-body > p {
+  color: white;
+}
+
+.panel-body > h2 {
+  color: white;
+}
+
+.panel-default > .panel-heading {
+  background-color: transparent;
+}
+
+h2.panel-title {
+  padding: 10px 0 10px 0;
+  font-size: 180%;
+  text-transform: uppercase;
+}
+
+.panel-media {
+  min-height: auto;
+  width: 100%;
+}
+
+.panel-footer {
+  font-size: 80%;
+  text-transform: uppercase;
+}
+/*END: Panel*/
+
+.tab-pane {
+  padding-top: 20px;
+}
+
+ul.entries {
+  list-style-type: none;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+  padding: 0;
+  margin: 0;
+}

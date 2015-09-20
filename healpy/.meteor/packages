@@ -9,5 +9,5 @@ autopublish
 insecure
 iron:router
 cfs:standard-packages
-cfs:gridfs
 cfs:filesystem
+twbs:bootstrap

@@ -1,15 +1,41 @@
 <template name="entriesOverview">
-  {{> newEntry }}
+  <!-- <div class="header-section"><h1>Feelin' healpy today?</h1></div> -->
+  <h3>Your challenge for today:</h3>
 
-  <h2>Entries Overview</h2>
-  <ul>
+  <div class="panel panel-accent">
+    <div class="panel-body">
+      <div align="center">
+        <img class="img-responsive" src="img/healpy_yeah.png"/>
+      </div>
+      <h2>Love your smile!</h2>
+      <p>Save your brightest smile, like a treasure. Just take a quick photo. Healpy will recognize automatically when you show us all of your teeth. Only then will this mission be accomplished.</p> 
+    </div>
+  </div>
+
+
+
+
+  <br/>
+  <br/>
+  <h3>Submit a new entry:</h3>
+  {{> newEntry }}
+  <br/>
+  <br/>
+  <h3>All entries at a glance:</h3>
+  <ul class="entries">
     {{#each entries}}
       <li>
-        <h3>{{ title }}</h3>
-        <p>{{ text }}</p>
-        <!-- {{#each data}}
-          <p>{{ data }}</p>
-        {{/each}} -->
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <img class="img-responsive img-rounded panel-media" src="img/mittagessen.jpg"/>
+            <h2 class="panel-title">{{ title }}</h2>
+          </div>
+          <div class="panel-body">
+            {{ text }}
+          </div>
+          <div class="panel-footer"># Challenge</div>
+        </div>
       </li>
     {{/each}}
   </ul>

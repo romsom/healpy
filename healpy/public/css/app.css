@@ -1,0 +1,114 @@
+/*END:Hacks*/
+.mdl-layout__drawer>.mdl-layout-title {
+  padding: 10px;
+}
+
+.mdl-layout__drawer {
+  background: #00a99d;
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+  color: white;
+  text-transform: uppercase;
+}
+
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
+  background-color: #22b573;
+}
+
+.demo-card-square.mdl-card {
+  width: auto;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.challenge-card.mdl-card {
+  width: auto;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.mdl-card__supporting-text {
+  color: #374a47;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background-color: #00a99d;
+  min-height: 300px;
+}
+
+.challenge-card > .mdl-card__title {
+  color: #fff;
+  background-color: #00a99d;
+  text-align: center;
+}
+
+.challenge-card > .mdl-card__supporting-text {
+  color: #fff;
+  background-color: #8eb6b1;
+  width: auto;
+}
+
+li:nth-child(even) > .demo-card-square > .mdl-card__title {
+  background-color: #00a99d;
+}
+
+li:nth-child(odd) > .demo-card-square > .mdl-card__title {
+  background-color: #22b573;
+}
+
+.mdl-button.mdl-button--colored {
+  color: #00a99d;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.mdl-layout__drawer-button {
+  background-color: #00a99d;
+  color: white;
+}
+
+.space {
+  padding: 20px 0 20px 0;
+}
+/*END:MDL Hacks*/
+
+/*General*/
+body {
+  height: 100vh;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, li {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  color: #374a47;
+}
+
+#newEntry {
+  padding-bottom: 50px;
+}
+
+.mdl-textfield {
+  width: 100%;
+}
+/*END: General*/
+
+/*Entries Overview*/
+ul.entries {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 0;
+}
+/*END: Entries Overview*/
+
+

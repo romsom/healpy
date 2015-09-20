@@ -1,10 +1,70 @@
 <template name="newEntry">
-  <form>
-    <label for="title">Title</label>
-    <input type="text" name="title"/>
-    <br />
-    <textarea name="text" rows="8" cols="30"></textarea>
-    <br />
-    <button type="submit">Submit</button>
-  </form>
+  
+  <div>
+    <ul class="nav nav-tabs" role="tablist" align="center">
+      <li role="presentation"><a href="#note" aria-controls="note" role="tab" data-toggle="tab">Note</a></li>
+      <li role="presentation"><a href="#image" aria-controls="image" role="tab" data-toggle="tab">Image</a></li>
+      <li role="presentation"><a href="#video" aria-controls="video" role="tab" data-toggle="tab">Video</a></li>
+      <li role="presentation"><a href="#voice" aria-controls="voice" role="tab" data-toggle="tab">Voice</a></li>
+    </ul>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane fade" id="note">
+        <form>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input class="form-control" type="text" id="title" name="title" placeholder="Title"/>
+          </div>
+
+          <div class="form-group">
+            <label for="text">What happened today?</label>
+            <textarea name="text" id="text" class="form-control" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="image">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input class="form-control" type="text" id="title" name="title" placeholder="Title"/>
+          </div>
+        <div class="form-group">
+          <label for="title">Upload your personal impressions: </label>
+          <button type="button" class="btn btn-default">Image Upload</button>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+        
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="video">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input class="form-control" type="text" id="title" name="title" placeholder="Title"/>
+          </div>
+        <div class="form-group">
+          <label for="title">Upload your personal impressions: </label>
+          <button type="button" class="btn btn-default">Video Upload</button>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="voice">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input class="form-control" type="text" id="title" name="title" placeholder="Title"/>
+          </div>
+        <div class="form-group">
+          <label for="title">Upload your personal impressions: </label>
+          <button type="button" class="btn btn-default">Voice Upload</button>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+
+  </div>
 </template>
+
+
+
+  
