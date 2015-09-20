@@ -21,8 +21,24 @@ Template.entriesOverview.helpers({
   }
 });
 
-Template.mediaContainer.helpers({
-  getImgUrl: function(dataElement) {
-    console.log(this);
+Template.challenges.helpers({
+  challenge: function() {
+    var challenge = challenges.findOne();
+    console.log(challenge);
+    if(!challenge){
+      Meteor.call('newChallenge', function(err, res) {
+        return challenges.findOne();
+      });
+    } else {
+      return challenge;
+    }
   }
-})
+});
+
+Template.challenges.events({
+  'click button': function() {
+    currentChallenge = challenges.findOne();
+    challenges.remove(currentChallenge._id);
+    Meteor.call('newChallenge');
+  }
+});
