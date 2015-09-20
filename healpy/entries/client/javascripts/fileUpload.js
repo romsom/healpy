@@ -19,6 +19,7 @@ Template.fileUpload.events({
 
           Meteor.call('insertDataElement', dataElement, function(error, id) {
             if(error) console.log(error);
+            Meteor.call('checkData', id.id);
             console.log(dataElements.findOne(id.id));
             uploadedFiles.insert({dataElementId: id});
           });
